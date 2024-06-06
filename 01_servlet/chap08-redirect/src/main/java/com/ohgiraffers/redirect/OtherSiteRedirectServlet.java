@@ -1,4 +1,4 @@
-package com.ohgiraffers.response.section03.status;
+package com.ohgiraffers.redirect;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,14 +7,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/status")
-public class StatusCodeTestServlet extends HttpServlet {
-
+@WebServlet("/othersite")
+public class OtherSiteRedirectServlet extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Get 요청 받음");
 		
-		//숫자는 에러코드를 넣어주면 된다.
-		response.sendError(404);
-//		response.sendError(500, "서버 내부 오류 500! 서버 내부 오류는 개발자 잘못이래요...");
+		// 이동하게 할 주소를 넣어준다
+		response.sendRedirect("http://www.google.com");
+		
 	
 	}
 

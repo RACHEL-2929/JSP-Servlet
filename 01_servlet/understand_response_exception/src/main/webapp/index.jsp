@@ -7,7 +7,7 @@
 <title>Response and Exception</title>
 </head>
 <body>
-<form action="response" method="get">
+<form action="response" method="post">
 	<h1>주문 화면</h1>
 	<label>제품명 : </label>
 	<select name="name">

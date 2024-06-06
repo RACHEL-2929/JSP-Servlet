@@ -15,7 +15,8 @@ import java.util.Set;
 public class ResponseAndException extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String furnitureName = request.getParameter("name");
 		int count = Integer.valueOf(request.getParameter("count"));
 		

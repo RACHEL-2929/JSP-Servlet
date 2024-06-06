@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 @WebServlet("/showErrorPage")
 public class ExceptionHandler extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String errorMessage = (String) request.getAttribute("jakarta.servlet.error.message");
 		Integer errorStatusCode = (int) request.getAttribute("jakarta.servlet.error.status_code");
 		
