@@ -23,9 +23,17 @@ public class PracticeFilter extends HttpFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("제품명 : "+request.getParameter("pro_name"));
-		System.out.println("수량 : "+request.getParameter("pro_count"));
-		chain.doFilter(request, response);
+		
+		if(Integer.valueOf(request.getParameter("pro_count"))>0) {
+			System.out.println("제품명 : "+request.getParameter("pro_name"));
+			System.out.println("수량 : "+request.getParameter("pro_count"));
+			chain.doFilter(request, response);
+		}else {
+			System.out.println("수량은 음수일 수 없습니다.");
+			System.out.println("수량 : "+request.getParameter("pro_count"));
+		}
+		
+		
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
