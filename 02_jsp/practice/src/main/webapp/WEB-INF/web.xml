@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>DiscountServlet</display-name>
+    <servlet-name>DiscountServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.practice.DiscountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DiscountServlet</servlet-name>
+    <url-pattern>/DiscountServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
