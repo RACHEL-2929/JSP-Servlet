@@ -19,4 +19,34 @@
     <servlet-name>DiscountServlet</servlet-name>
     <url-pattern>/DiscountServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CalTotalPriceServlet</display-name>
+    <servlet-name>CalTotalPriceServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.practice.CalTotalPriceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CalTotalPriceServlet</servlet-name>
+    <url-pattern>/CalTotalPriceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CardDiscountServlet</display-name>
+    <servlet-name>CardDiscountServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.practice.CardDiscountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CardDiscountServlet</servlet-name>
+    <url-pattern>/CardDiscountServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CompletePayServlet</display-name>
+    <servlet-name>CompletePayServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.practice.CompletePayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CompletePayServlet</servlet-name>
+    <url-pattern>/CompletePayServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

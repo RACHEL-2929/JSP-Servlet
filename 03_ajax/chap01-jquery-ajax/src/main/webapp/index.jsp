@@ -46,7 +46,7 @@
 				type:"post",
 				data: {
 					message: messageVal
-				},
+				},// 객체로 보냄
 				success: function(data){
 					alert(data);
 				},
