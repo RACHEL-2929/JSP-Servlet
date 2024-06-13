@@ -16,18 +16,11 @@ public class SuccessPayServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cardName = request.getParameter("card_name");
 		int price = Integer.valueOf(request.getParameter("price"));
+		int discont = Integer.valueOf(request.getParameter("discount"));
 		double discountPrice = 0;
 		
-		if ("woori".equals(cardName)) {
-//			8%
-			discountPrice = 0.92 * price;
-		} else if("kb".equals(cardName)) {
-//			10%
-			discountPrice = 0.9*price;
-		}else if("kakao".equals(cardName)){
-//			5%
-			discountPrice = 0.95*price;
-		}
+//		최종결제 금액 출력
+		discountPrice = (1-0.01*discont) * price;
 		
 		JSONObject json = new JSONObject();
 		json.put("discountPrice", discountPrice);

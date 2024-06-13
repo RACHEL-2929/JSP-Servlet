@@ -11,7 +11,6 @@ import java.io.PrintWriter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.ohgiraffers.practice.product.ProductDTO;
 
 @WebServlet("/totalprice")
 public class CalTotalPriceServlet extends HttpServlet {

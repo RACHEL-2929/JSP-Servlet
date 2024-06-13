@@ -27,6 +27,7 @@
 		<h3>총 상품 금액은 </h3><h3 id="total_price"></h3><h3>원 입니다.</h3>
 		
 		<script>
+			let price = 0;
 			$("#submit").click(function() {
 				$.ajax({					
 					url:"/practice/totalprice",
@@ -37,7 +38,8 @@
 					},
 					success:function(data){
 						/*넘어온 것은 객체이므로 접근하려면 .을 사용해야 한다.  */
-						$("#total_price").text(data.price);
+						price = data.price;
+						$("#total_price").text(price);
 					},
 					error: function(error) {
 						console.log(error);
@@ -61,6 +63,7 @@
 		<br>
 		<h2 id="discountComplete"></h2>
 		<script>
+			let discount = 0;
 			$("#card_name").change(function() {
 				console.log($("#card_name").val());
 				$.ajax({
@@ -70,7 +73,8 @@
 						card_name:$("#card_name").val(),
 					},
 					success: function(data) {
-						$("#discount").text("카드 할인율 " + data.discount+"%가 적용되었습니다.");
+						discount = data.discount;
+						$("#discount").text("카드 할인율 " + discount +"%가 적용되었습니다.");
 					},
 					error: function(error) {
 						console.log(error);
@@ -86,10 +90,11 @@
 					type:"get",
 					data:{
 						card_name:$("#card_name").val(),
-						price:$("#total_price").val()
+						price:price,
+						discount:discount
 					},
 					success: function(data) {
-						$("#discountComplete").text($("#card_name").val()+"로 "+
+						$("#discountComplete").text($("#card_name option:selected").text()+"로 "+
 								"총 " + data.discountPrice+"원 결제되었습니다!! :)");
 					},
 					error: function(error) {
