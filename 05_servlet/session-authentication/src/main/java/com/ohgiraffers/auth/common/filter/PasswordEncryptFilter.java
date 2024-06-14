@@ -22,8 +22,24 @@ public class PasswordEncryptFilter extends HttpFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		EncryptRequestWrapper wrapper = new EncryptRequestWrapper((HttpServletRequest)request);
-		chain.doFilter(wrapper, response);
+		
+		HttpServletRequest hrequest = (HttpServletRequest)request;
+		
+		String uri = hrequest.getRequestURI();
+		System.out.println("[Filter] requestURI: " + uri);
+		
+		String intent = uri.substring(uri.lastIndexOf("/"));
+		System.out.println("[Filter] intent: " + intent);
+		
+		//로그인을 하러갈 때는 굳이 암호화가 필요하지 않지만 그 반대의 경우는 암호화를 해줘야한다.
+		if(!"/login".equals(intent)) {
+			EncryptRequestWrapper wrapper = new EncryptRequestWrapper(hrequest);
+			chain.doFilter(wrapper, response);
+			
+		}else {
+			chain.doFilter(request, response);
+		}
+		
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

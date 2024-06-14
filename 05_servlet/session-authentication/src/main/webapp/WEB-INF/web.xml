@@ -9,4 +9,53 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>MemberLoginServlet</display-name>
+    <servlet-name>MemberLoginServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.auth.member.controller.MemberLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberLoginServlet</servlet-name>
+    <url-pattern>/MemberLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberLogoutServlet</display-name>
+    <servlet-name>MemberLogoutServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.auth.member.controller.MemberLogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberLogoutServlet</servlet-name>
+    <url-pattern>/MemberLogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberPageServlet</display-name>
+    <servlet-name>MemberPageServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.auth.member.controller.MemberPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberPageServlet</servlet-name>
+    <url-pattern>/MemberPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminPageServlet</display-name>
+    <servlet-name>AdminPageServlet</servlet-name>
+    <servlet-class>com.ohgiraffers.auth.admin.AdminPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminPageServlet</servlet-name>
+    <url-pattern>/AdminPageServlet</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>AuthenticationFilter</display-name>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>com.ohgiraffers.auth.common.filter.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/AuthenticationFilter</url-pattern>
+  </filter-mapping>
 </web-app>
