@@ -10,15 +10,15 @@
 	<table>
 		<tr>
 			<td>제목</td>
-			<td></td>
+			<td>${requestScope.board.boardTitle}</td>
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td></td>
+			<td>${requestScope.board.boardWriter}</td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td></td>
+			<td>${requestScope.board.boardBody}</td>
 		</tr>
 	</table>
 	

@@ -9,7 +9,7 @@ public class BoardDTO {
 	private int boardNo;
 	private String boardTitle;
 	private String boardBody;
-	private String writerMemberNo;
+	private String boardWriter;
 	private Date createdDate;
 	private Date modifiedDate;
 	private char boardStatus;
@@ -17,14 +17,25 @@ public class BoardDTO {
 	public BoardDTO() {
 		super();
 	}
+	
+	
 
-	public BoardDTO(int boardNo, String boardTitle, String boardBody, String writerMemberNo, Date createdDate,
+	public BoardDTO(String boardTitle, String boardBody, String boardWriter) {
+		super();
+		this.boardTitle = boardTitle;
+		this.boardBody = boardBody;
+		this.boardWriter = boardWriter;
+	}
+
+
+
+	public BoardDTO(int boardNo, String boardTitle, String boardBody, String boardWriter, Date createdDate,
 			Date modifiedDate, char boardStatus) {
 		super();
 		this.boardNo = boardNo;
 		this.boardTitle = boardTitle;
 		this.boardBody = boardBody;
-		this.writerMemberNo = writerMemberNo;
+		this.boardWriter = boardWriter;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.boardStatus = boardStatus;
@@ -54,12 +65,12 @@ public class BoardDTO {
 		this.boardBody = boardBody;
 	}
 
-	public String getWriterMemberNo() {
-		return writerMemberNo;
+	public String getBoardWriter() {
+		return boardWriter;
 	}
 
-	public void setWriterMemberNo(String writerMemberNo) {
-		this.writerMemberNo = writerMemberNo;
+	public void setBoardWriter(String boardWriter) {
+		this.boardWriter = boardWriter;
 	}
 
 	public Date getCreatedDate() {
@@ -89,7 +100,7 @@ public class BoardDTO {
 	@Override
 	public String toString() {
 		return "BoardDTO [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardBody=" + boardBody
-				+ ", writerMemberNo=" + writerMemberNo + ", createdDate=" + createdDate + ", modifiedDate="
+				+ ", boardWriter=" + boardWriter + ", createdDate=" + createdDate + ", modifiedDate="
 				+ modifiedDate + ", boardStatus=" + boardStatus + "]";
 	}
 

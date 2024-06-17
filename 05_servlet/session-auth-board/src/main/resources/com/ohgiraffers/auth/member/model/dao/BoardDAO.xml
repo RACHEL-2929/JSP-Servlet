@@ -8,7 +8,7 @@
 		<id property="boardNo" column="BOARD_NO"/>
 		<result property="boardTitle" column="BOARD_TITLE"/>
 		<result property="boardBody" column="BOARD_BODY"/>
-		<result property="writerMemberNo" column="BOARD_WRITER_MEMBER_NO"/>
+		<result property="boardWriter" column="BOARD_WRITER_MEMBER_NO"/>
 		<result property="createdDate" column="CREATED_DATE"/>
 		<result property="modifiedDate" column="MODIFIED_DATE"/>
 		<result property="boardStatus" column="BOARD_STATUS"/>
@@ -24,5 +24,26 @@
 			MODIFIED_DATE,
 			BOARD_STATUS
 		FROM TBL_BOARD
+	</select>
+	
+	<insert id="insertBoard" parameterType="com.ohgiraffers.auth.member.model.dao.BoardDAO">
+	INSERT INTO TBL_BOARD (
+		BOARD_TITLE,
+		BOARD_BODY,
+ 		BOARD_WRITER_MEMBER_NO
+	)VALUES(
+		#{ boardTitle }
+		, #{ boardBody }
+		, #{ boardWriter }
+	)
+	</insert>
+	
+	<select id="selectBoardbyBoardNo" resultMap="boardResultMap">
+	SELECT
+		BOARD_TITLE,
+		BOARD_BODY,
+ 		BOARD_WRITER_MEMBER_NO
+	FROM TBL_BOARD
+	WHERE BOARD_NO=${boardNO}
 	</select>
 </mapper>

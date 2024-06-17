@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="" method="">
+	<form action="${pageContext.servletContext.contextPath }/board/regist" method="post">
 	<table>
 		<tr>
 			<td>제목</td>

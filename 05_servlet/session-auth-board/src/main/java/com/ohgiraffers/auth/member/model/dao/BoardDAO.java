@@ -9,6 +9,10 @@ public interface BoardDAO {
 
 	// TODO LV.2 > ST.1 > 4. BoardList 조회하는 메소드 선언
 	List<BoardDTO> selectAllBoard();
+
+	int insertBoard(BoardDTO board);
+
+	BoardDTO selectBoardbyBoardNo(int boardNo);
 	
 	
 	// TODO LV.2 > ST.1 > 5. main의 resources 폴더 하위에 해당 인터페이스와 매핑되는 xml 파일을 만들어 쿼리 작성
