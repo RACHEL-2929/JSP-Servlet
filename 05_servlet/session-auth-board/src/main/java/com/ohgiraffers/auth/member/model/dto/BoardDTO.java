@@ -26,7 +26,8 @@ public class BoardDTO {
 		this.boardBody = boardBody;
 		this.boardWriter = boardWriter;
 	}
-
+	
+	
 
 
 	public BoardDTO(int boardNo, String boardTitle, String boardBody, String boardWriter, Date createdDate,

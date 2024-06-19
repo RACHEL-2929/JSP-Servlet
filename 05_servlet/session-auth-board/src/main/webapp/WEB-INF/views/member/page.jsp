@@ -24,8 +24,8 @@
 
 		<!-- (LV.2 > ST.1) 1. EL, JSTL 활용해서 목록 현출되게 하기  -->
 	<c:forEach items="${requestScope.boardList }" var="board">
-		<tr class="boardDetail" onclick="showBoardNo(${board.boardNo })">
-			<th id="boardNo">${board.boardNo }</th>
+		<tr onclick="showBoardNo(${board.boardNo })">
+			<th>${board.boardNo }</th>
 			<th>${board.boardTitle }</th>
 			<th>${board.boardWriter }</th>
 			<th>${board.createdDate }</th>
@@ -42,9 +42,8 @@
 	<!-- (LV.2 > ST.3) 3. script로 onclick 이벤트를 걸어 상세조회 요청하게 하기 -->
 	<script>
 		function showBoardNo(boardNo){
-				console.log(boardNo);
 		        location.href = "${pageContext.servletContext.contextPath}/board/detail?boardNo="+ boardNo;
-			};
+		};
 	</script>
 	
 

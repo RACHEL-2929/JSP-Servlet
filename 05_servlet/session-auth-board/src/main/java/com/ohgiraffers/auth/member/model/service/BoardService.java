@@ -70,14 +70,30 @@ public class BoardService {
 		 return board;
 		
 	}
-	
-	
+
+
+
 	// TODO LV.2 > ST.4 > 6. 대상 게시글 정보를 수정하는 서비스 로직 작성
-	// 6-1) SqlSession 얻기
-	// 6-2) mapper 얻기
-	// 6-3) 메소드 호출해서 BoardDTO 넘겨주며 대상 정보 수정하기
-	// 6-4) 수정 결과에 따른 commit, rollback 처리 후 자원 반납
-	// 6-5) 결과 int로 반환하기
+	public int modifyBoard(BoardDTO board) {
+		// 6-1) SqlSession 얻기
+		SqlSession session = getSqlSession();
+		// 6-2) mapper 얻기
+		boardDAO = session.getMapper(BoardDAO.class);
+		// 6-3) 메소드 호출해서 BoardDTO 넘겨주며 대상 정보 수정하기
+		int result = boardDAO.modifyBoard(board);
+		// 6-4) 수정 결과에 따른 commit, rollback 처리 후 자원 반납
+		if(result>0) {
+			session.commit();
+		}else {
+			session.rollback();
+		}
+		session.close();
+		// 6-5) 결과 int로 반환하기
+		return result;
+	}
+	
+	
+	
 	
 	// TODO LV.2 > ST.5 > 5. 대상 게시글을 삭제 (board_status를 N으로 update) 서비스 로직 작성
 	// 5-1) SqlSession 얻기

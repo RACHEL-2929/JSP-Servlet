@@ -26,7 +26,7 @@
 		FROM TBL_BOARD
 	</select>
 	
-	<insert id="insertBoard" parameterType="com.ohgiraffers.auth.member.model.dao.BoardDAO">
+	<insert id="insertBoard" parameterType="com.ohgiraffers.auth.member.model.dto.BoardDTO">
 	INSERT INTO TBL_BOARD (
 		BOARD_TITLE,
 		BOARD_BODY,
@@ -40,10 +40,19 @@
 	
 	<select id="selectBoardbyBoardNo" resultMap="boardResultMap">
 	SELECT
+		BOARD_NO,
 		BOARD_TITLE,
 		BOARD_BODY,
  		BOARD_WRITER_MEMBER_NO
 	FROM TBL_BOARD
 	WHERE BOARD_NO=${boardNo}
 	</select>
+	
+	<update id="modifyBoard" parameterType="com.ohgiraffers.auth.member.model.dto.BoardDTO">
+	UPDATE SET 
+		BOARD_TITLE=${boardTitle},
+		BOARD_BODY=${boardBody}
+	FROM TBL_BOARD
+	WHERE BOARD_WRITER_MEMBER_NO=${boardWriter}
+	</update>
 </mapper>

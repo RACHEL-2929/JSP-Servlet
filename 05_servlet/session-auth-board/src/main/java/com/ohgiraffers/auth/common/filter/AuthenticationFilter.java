@@ -36,10 +36,13 @@ public class AuthenticationFilter implements Filter {
 		
 		memberPermitList.add("/member/page");
 		//TODO LV.2 > ST.2 > 2. 게시판 등록 요청에 대해 인가처리 되도록 url 추가하기
-		memberPermitList.add("/member/board/regist");
+		memberPermitList.add("/board/regist");
 		//TODO LV.2 > ST.3 > 2. 게시글 상세조회 요청에 대해 인가처리 되도록 url 추가하기
+		memberPermitList.add("/board/detail");
 		//TODO LV.2 > ST.4 > 2. 게시판 수정 요청에 대해 인가처리 되도록 url 추가하기
+		memberPermitList.add("/board/modify");
 		//TODO LV.2 > ST.5 > 2. 게시글 삭제 요청에 대해 인가처리 되도록 url 추가하기
+		memberPermitList.add("/board/delete");
 		
 		allPermitList.add("/member/regist");
 		allPermitList.add("/member/login");
