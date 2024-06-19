@@ -44,6 +44,6 @@
 		BOARD_BODY,
  		BOARD_WRITER_MEMBER_NO
 	FROM TBL_BOARD
-	WHERE BOARD_NO=${boardNO}
+	WHERE BOARD_NO=${boardNo}
 	</select>
 </mapper>

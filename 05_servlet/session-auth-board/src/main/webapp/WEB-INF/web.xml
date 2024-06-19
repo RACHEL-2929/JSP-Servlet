@@ -69,4 +69,14 @@
     <servlet-name>BoardDeleteServlet</servlet-name>
     <url-pattern>/BoardDeleteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Newservlt</display-name>
+    <servlet-name>Newservlt</servlet-name>
+    <servlet-class>com.ohgiraffers.auth.member.controller.Newservlt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Newservlt</servlet-name>
+    <url-pattern>/Newservlt</url-pattern>
+  </servlet-mapping>
 </web-app>
